@@ -1,5 +1,13 @@
+__precompile__()
 module COMBO
+export combo
 
-# package code goes here
+using PyCall
+
+const combo = PyCall.PyNULL()
+
+function __init__()
+    copy!(combo, pyimport("combo"))
+end
 
 end # module
